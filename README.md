@@ -1,6 +1,6 @@
 <h1>ExpNo 1 :Developing AI Agent with PEAS Description</h1>
-<h3>Name: Mokesh C N</h3>
-<h3>Register Number/Staff Id: 212225240088</h3>
+<h3>Name: Mokesh C </h3>
+<h3>Register Number: 212225240088</h3>
 
 
 <h3>AIM:</h3>
@@ -40,10 +40,13 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
-<h2>Program</h2>
+## Python Code
+
+```python
 import random
-     class HealthMonitoringAgent:
-     def __init__(self, patient_data, sensors, actuators):
+
+class HealthMonitoringAgent:
+    def __init__(self, patient_data, sensors, actuators):
         self.patient_data = patient_data
         self.sensors = sensors
         self.actuators = actuators
@@ -74,18 +77,24 @@ import random
             return "Recommendation: Take rest and monitor temperature."
         else:
             return "No specific action needed"
-    class HealthSensors:
-         def get_health_state(self):
-               return {
+
+
+class HealthSensors:
+    def get_health_state(self):
+        return {
             "heart_rate": random.randint(60, 150),
             "blood_pressure": random.randint(90, 160),
             "temperature": random.uniform(36.0, 38.5)
         }
-      class HealthActuators:
-          def perform_action(self, action):
-               print("Action:", action)
-      if __name__ == "__main__":
-           patient_data = {
+
+
+class HealthActuators:
+    def perform_action(self, action):
+        print("Action:", action)
+
+
+if __name__ == "__main__":
+    patient_data = {
         "patient_id": 123,
         "name": "John Doe",
         "age": 35
@@ -96,4 +105,9 @@ import random
 
     agent = HealthMonitoringAgent(patient_data, sensors, actuators)
     agent.monitor_health()
+```
+<h2>Output</h2>
+<img width="655" height="237" alt="Screenshot 2026-07-24 111421" src="https://github.com/user-attachments/assets/ad99b7f8-3a17-4b91-bdab-7e3a44039bea" />
 
+           
+    
