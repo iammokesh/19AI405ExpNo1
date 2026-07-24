@@ -42,29 +42,27 @@
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
 <h3>#Program</h3>
 import random
-
 class HealthMonitoringAgent:
-    def __init__(self, patient_data):
-        self.patient_data = patient_data
+def __init__(self, patient_data):
+self.patient_data = patient_data
+def monitor_health(self):
+while True:
+current_health_state = self.sensors.get_health_state()
+action = self.choose_action(current_health_state)
+self.actuators.perform_action(action)
+if self.choose_action(current_health_state)=="No specific action needed":
+break
 
-    def monitor_health(self):
-        while True:
-            current_health_state = self.sensors.get_health_state()
-            action = self.choose_action(current_health_state)
-            self.actuators.perform_action(action)
-            if self.choose_action(current_health_state)=="No specific action needed":
-                break
-
-    def choose_action(self, current_health_state):
-        # Example: A simple rule-based system for decision-making
-        if current_health_state['heart_rate'] > 120:
-            return "Alert healthcare provider: High heart rate detected"
-        elif current_health_state['blood_pressure'] > 140:
-            return "Alert healthcare provider: High blood pressure detected"
-        elif current_health_state['temperature'] > 38:
-            return "Recommend rest and monitor temperature"
-        else:
-            return "No specific action needed"
+def choose_action(self, current_health_state):
+# Example: A simple rule-based system for decision-making\
+if current_health_state['heart_rate'] > 120:
+return "Alert healthcare provider: High heart rate detected"
+elif current_health_state['blood_pressure'] > 140:
+return "Alert healthcare provider: High blood pressure detected"
+elif current_health_state['temperature'] > 38:
+return "Recommend rest and monitor temperature"
+else:
+return "No specific action needed"
 
 class HealthSensors:
     def get_health_state(self):
@@ -91,4 +89,3 @@ if __name__ == "__main__":
     health_monitoring_agent.actuators = health_actuators
     
     health_monitoring_agent.monitor_health()
-<h3>#Output</h3>
